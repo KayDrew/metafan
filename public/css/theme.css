@@ -1,0 +1,20 @@
+body{
+    background-color: rgba(255, 255, 255, 0.829);
+}
+
+.landingPage{
+    background-color: rgba(23, 116, 160, 0.692);
+    color: azure;
+}
+button{
+    color: rgb(255, 255, 255);
+    background-image:linear-gradient(to right,red, blueviolet) ;
+}
+
+nav a {
+    color: aliceblue;
+    font-size: 30px;
+text-decoration: none;
+    
+}
+

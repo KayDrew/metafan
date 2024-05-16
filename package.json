@@ -1,0 +1,51 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "",
+    "test": "",
+    "start": "node app.js"
+  },
+  "devDependencies": {
+    "connect-mongodb-session": "^2.2.0",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "http-errors": "^2.0.0",
+    "mkdirp": "^3.0.1",
+    "mongodb": "^6.5.0",
+    "morgan": "^1.10.0",
+    "node-gyp": "^10.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pluralize": "^8.0.0"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

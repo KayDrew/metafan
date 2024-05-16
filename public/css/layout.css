@@ -1,0 +1,47 @@
+body{
+    width: 90%;
+    margin: 0 auto;
+   padding: 15px;
+}
+
+.intro{
+    padding-top:8%;
+    text-align: center;
+    justify-content: center;
+}
+
+
+button{
+
+    width: 200px;
+    padding: 10px;
+    font-size: larger;
+    border: none;
+    border-radius: 17px;
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+  }
+
+   a{
+    margin: 5px;
+  }
+
+
+  .large{
+    font-size: 23px;
+
+  }
+
+  footer{
+    margin-bottom: 0;
+  }
+
