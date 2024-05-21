@@ -5,6 +5,11 @@ body{
 
 }
 
+img{
+    opacity: 3;
+   filter: saturate(3);
+   filter: contrast(1.4);
+}
 .landingPage{
     color:rgba(0, 0, 0, 0.801);
 }
@@ -12,12 +17,10 @@ button{
     color: rgb(255, 255, 255);
     background-image:linear-gradient(to right,red, blueviolet) ;
 }
-a{
-    text-decoration: none;
-}
+
 
 nav a {
-    color: rgba(0, 0, 0, 0,1);
+
     font-size: 24px;
 
     
@@ -31,6 +34,6 @@ footer{
 footer a{
     margin: 15px;
     font-size: 25px;
-    color:rgba(0, 0, 0, 0.801);
+    color:rgba(10, 10, 10, 0.829);
   
 }
