@@ -2,12 +2,18 @@ body{
     width: 90%;
     margin: 0 auto;
    padding: 15px;
+   background-color: rgba(238, 238, 238, 0.979);
+
+  
 }
+
+
 
 .intro{
     padding-top:8%;
     text-align: center;
     justify-content: center;
+    margin-top: 5%;
 }
 
 
@@ -42,6 +48,12 @@ h1 {
   }
 
   footer{
-    margin-bottom: 0;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+    
   }
 

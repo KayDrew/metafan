@@ -6,7 +6,7 @@ import { config } from 'dotenv';
 import mongo from 'mongodb';
 import cookieParser  from 'cookie-parser';
 import pluralize from 'pluralize';
-import logger from 'morgan';
+//import logger from 'morgan';
 import passport from 'passport';
 //import database from './db.js';
 //import routes from './index.js';
@@ -24,8 +24,9 @@ app.set('views', 'views');
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
+app.use(express.static('images'))
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

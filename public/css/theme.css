@@ -1,20 +1,36 @@
 body{
     background-color: rgba(255, 255, 255, 0.829);
+    opacity: 3;
+  
+
 }
 
 .landingPage{
-    background-color: rgba(23, 116, 160, 0.692);
-    color: azure;
+    color:rgba(0, 0, 0, 0.801);
 }
 button{
     color: rgb(255, 255, 255);
     background-image:linear-gradient(to right,red, blueviolet) ;
 }
+a{
+    text-decoration: none;
+}
 
 nav a {
-    color: aliceblue;
-    font-size: 30px;
-text-decoration: none;
+    color: rgba(0, 0, 0, 0,1);
+    font-size: 24px;
+
     
 }
 
+footer{
+    margin-top: 50px;
+    text-align: center;
+}
+
+footer a{
+    margin: 15px;
+    font-size: 25px;
+    color:rgba(0, 0, 0, 0.801);
+  
+}
