@@ -37,3 +37,12 @@ footer a{
     color:rgba(10, 10, 10, 0.829);
   
 }
+
+.facebook{
+    background-color: navy;
+
+}
+
+.instagram{
+    background-image: linear-gradient(to right, orange,purple);
+}
