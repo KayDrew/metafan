@@ -46,6 +46,7 @@
     "pluralize": "^8.0.0"
   },
   "dependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "passport-facebook": "^3.0.0"
   }
 }
