@@ -49,7 +49,33 @@ cookie: {secure:true},
 
 }));
 
+
 app.use(passport.authenticate('session'));
+
+  //persist user information in the login session
+  passport.serializeUser(function(user, cb) {
+
+	process.nextTick(function() {
+
+  return cb(null,{
+
+    id:user.id,
+    username:user.displayName
+  });
+
+	});
+  
+  });
+
+  
+  passport.deserializeUser(function(user, cb) {
+
+    process.nextTick(function(){
+        return cb(null,user);
+    });
+  });
+
+  let user="none";
 
 passport.use( new FacebookStrategy({
 
@@ -59,9 +85,11 @@ passport.use( new FacebookStrategy({
 
 }, 
 
-function(accessToken, refreshToken,profile,cd){
+function(accessToken, refreshToken,profile,cb){
 
+    user= profile.displayName;
 console.log(profile);
+
 
 }
 
@@ -70,26 +98,37 @@ console.log(profile);
 
 );
 
-const client= data.connectToCluster();
 
-if(client){
 
-app.get("/login/facebook", passport.authenticate('facebook'
-    
-    
+app.get("/login/facebook", passport.authenticate('facebook',
+ 
     ));
 
 app.get('/oauth2/redirect/facebook',
 
-passport.authenticate('facebook', {failureRedirect:'/', successRedirect:'/home'}),
+passport.authenticate('facebook', {failureRedirect:'/', failureMessage:true}),
 
 function(req,res){
-
+ 
     res.redirect('/home');
-}
+    
+});
 
+app.post('/logout', function(req,res){
 
-);
+    req.logOut(
+
+        function(err){
+            if(err){
+                return next(err);
+            }
+
+            res.redirect('/');
+            
+        }
+    );
+
+});
 
 app.get("/",function(req,res){
 
@@ -98,7 +137,7 @@ app.get("/",function(req,res){
 
 
 app.get("/home",function(req,res){
-
+    console.log(user);
     res.render("home");
 });
 
@@ -117,12 +156,6 @@ app.post("login/username", function(){
 });
 
 
-}
-
-else{
-
-    console.log("could not connect to database");
-}
 
 
 app.listen(3000, ()=>{
