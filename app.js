@@ -15,7 +15,10 @@ import {ObjectId} from 'mongodb';
 import LocalStrategy from 'passport-local';
 import FacebookStrategy from 'passport-facebook';
 
+
 const app= express();
+
+
 const data= database();
 //const route= routes();
 app.locals.pluralize;
@@ -75,19 +78,20 @@ app.use(passport.authenticate('session'));
     });
   });
 
-  let user="none";
+
 
 passport.use( new FacebookStrategy({
 
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: '/oauth2/redirect/facebook'
+    callbackURL: '/oauth2/redirect/facebook',
+    //include app secret to prevent malicious attacks/ unauthorised access
+    enableProof: true
 
 }, 
 
 function(accessToken, refreshToken,profile,cb){
 
-    user= profile.displayName;
 console.log(profile);
 
 
@@ -100,9 +104,16 @@ console.log(profile);
 
 
 
-app.get("/login/facebook", passport.authenticate('facebook',
- 
-    ));
+
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/');
+  };
+
+
+app.get("/login/facebook", passport.authenticate('facebook'));
 
 app.get('/oauth2/redirect/facebook',
 
@@ -136,7 +147,7 @@ app.get("/",function(req,res){
 });
 
 
-app.get("/home",function(req,res){
+app.get("/home",ensureAuthenticated, function(req,res){
     console.log(user);
     res.render("home");
 });
